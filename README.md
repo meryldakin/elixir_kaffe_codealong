@@ -5,7 +5,7 @@ If we want to use the popular messaging system Kafka with our Elixir projects, w
 
 In this codealong we'll build the barest of simple Elixir applications and use Kaffe to connect it to a locally running Kafka server. Later we'll cover a couple of variations to connect a dockerized Kafka server or an umbrella elixir app.
 
-This post assumes basic knowledge of Elixir and no knowledge of Kafka or Kaffe. Here is the repo with the full project: ElixirExampleKaffe Codealong
+This post assumes basic knowledge of Elixir and no knowledge of Kafka or Kaffe. Here is the repo with the full project: ElixirKaffeCodealong Codealong
 
 ## What is Kafka, briefly?
 Kafka is a messaging system. It does essentially three things:
@@ -37,7 +37,7 @@ Kafka
 ### Set up Elixir App
 
 **1. Start new project**
-`mix new elixir_example_kaffe`
+`mix new elixir_kaffe_codealong`
 
 **2. Configure kaffe**
 **2.a:** In `mix.exs` add `:kaffe` to the list of extra applications:
@@ -77,7 +77,7 @@ config :kaffe,
 **4. Configure consumer**
 **4.a:** add `/lib/application.ex` with the following code:
 ```elixir
-defmodule ElixirExampleKaffe.Application do
+defmodule ElixirKaffeCodealong.Application do
   use Application # read more about Elixir's Application module here: https://hexdocs.pm/elixir/Application.html
 
   def start(_type, args) do
@@ -95,7 +95,7 @@ end
 def application do
   [
     extra_applications: [:logger, :kaffe],
-    mod: {ElixirExampleKaffe.Application, []}
+    mod: {ElixirKaffeCodealong.Application, []}
     # now that we're using the Application module, this is where we'll tell it to start.
     # We use the keyword `mod` with applications that start a supervision tree,
     # which we configured when adding our Kaffe.Consumer to Application above.
@@ -175,7 +175,7 @@ iex> %{
     children = case args do
       [env: :prod] -> [worker(Kaffe.Consumer, [])]
       [env: :test] -> []
-      [env: :dev]  -> [{ElixirExampleKaffe.OtherApp, []}, worker(Kaffe.Consumer, [])] # note that it is not a tuple
+      [env: :dev]  -> [{ElixirKaffeCodealong.OtherApp, []}, worker(Kaffe.Consumer, [])] # note that it is not a tuple
       [_] -> []
     end
 ```

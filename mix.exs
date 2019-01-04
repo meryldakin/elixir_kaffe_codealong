@@ -1,9 +1,9 @@
-defmodule ElixirExampleKaffe.MixProject do
+defmodule ElixirKaffeCodealong.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :elixir_example_kaffe,
+      app: :elixir_kaffe_codealong,
       version: "0.1.0",
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
@@ -14,7 +14,7 @@ defmodule ElixirExampleKaffe.MixProject do
   def application do
     [
       extra_applications: [:logger, :kaffe],
-      mod: {ElixirExampleKaffe.Application, []}
+      mod: {ElixirKaffeCodealong.Application, []}
       # now that we're using the Application module, this is where we'll tell it to start.
       # We use the keyword `mod` with applications that start a supervision tree,
       # which we configured when adding our Kaffe.Consumer to Application above.

@@ -1,8 +1,8 @@
-defmodule  ElixirExampleKaffeTest do
+defmodule  ElixirKaffeCodealongTest do
   use ExUnit.Case
-  doctest ElixirExampleKaffe
+  doctest ElixirKaffeCodealong
 
   test "greets the world" do
-    assert ElixirExampleKaffe.hello() == :world
+    assert ElixirKaffeCodealong.hello() == :world
   end
 end

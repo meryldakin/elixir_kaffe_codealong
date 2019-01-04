@@ -1,4 +1,4 @@
-defmodule ElixirExampleKaffe.Application do
+defmodule ElixirKaffeCodealong.Application do
   use Application # read more about Elixir's Application module here: https://hexdocs.pm/elixir/Application.html
 
   def start(_type, args) do
