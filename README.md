@@ -5,7 +5,7 @@ If we want to use the popular messaging system Kafka with our Elixir projects, w
 
 In this codealong we'll build the barest of simple Elixir applications and use Kaffe to connect it to a locally running Kafka server. Later we'll cover a couple of variations to connect a dockerized Kafka server or an umbrella elixir app.
 
-This post assumes basic knowledge of Elixir and no knowledge of Kafka or Kaffe. Here is the repo with the full project: ElixirExampleKaffe Codealong
+This post assumes basic knowledge of Elixir and no knowledge of Kafka or Kaffe. Here is the repo with the full project: [Elixir Kaffe Codealong](https://github.com/meryldakin/elixir_kaffe_codealong)
 
 ## What is Kafka, briefly?
 Kafka is a messaging system. It does essentially three things:
