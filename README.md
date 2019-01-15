@@ -4,7 +4,7 @@ author_link: https://github.com/meryldakin
 categories: til
 date: 2019-01-15
 layout: post
-title:  Connecting Elixir to Kafka with Kaffe: a codealong
+title:  Connecting Elixir to Kafka with Kaffe
 excerpt: >
   A codealong to help connect Kafka to your Elixir project with the wrapper Kaffe.
 ---
@@ -29,7 +29,7 @@ Say we want to keep an activity log for users. Every time a user triggers an eve
 
 Here's a basic idea of how this might look:
 
-![Kafka Flow Example]({% asset kafka_flow_example.png @path %})
+![Kafka Flow Example]({% asset kafka-flow-example.png @path %})
 
 The three services reading from Kafka would only take the pieces of data that they require. For example, the first service would only read from the `banner_click` topic while the last only from `search_term`. The second service that cares about active users might read from both topics to capture all site activity.
 
